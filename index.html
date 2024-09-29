@@ -1,0 +1,121 @@
+<html></html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aiden Dowling Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" >
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li><a href="#container">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="./assets/resume.pdf" target="_blank">RESUME</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Home Section -->
+<div id="container">
+    <div class="row">
+        <div class="col">
+            <h1>Aiden Dowling</h1>
+            <p>Aspiring software engineer</p>
+
+            <!-- Icons for GitHub and LinkedIn -->
+            <div class="social-icons">
+                <a href="https://github.com/aidendowling" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/aiden-dowling" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- About Section -->
+    <div id="about">
+        <div id="row2">
+            <div class="aboutmecol1">
+                <img src="assets/aidenbw.jpg" alt="">
+            </div>
+            <div class="aboutmecol2">
+                <h1>About Me</h1>
+                <p>I am currently a sophomore at the University of Georgia, pursuing a major in Computer Engineering as a proud member of the Morehead Honors College and a recipient of the Woodruff Scholarship. My focus lies in advancing educational and business technologies, driven by a passion for innovation and practical application. With each day, I am inspired by the possibilities within the computing industry and look forward to leveraging my education at the University of Georgia to make meaningful contributions in this dynamic field. </p>
+                <div class="tabs">
+                    <p class="tab-links active-link" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" onclick="opentab('skills')">Skills</p>
+                </div>
+                <div class="tab-contents active-content" id="experience">
+                    <ul>
+                        <li><span>Cybersecurity Intern</span><br><span2>UGA CyberArch | August 2024 - Present</span2><br>Worked on a team of 3 other interns providing free and quality cyber security consulting and auditing for local non-profit organizations.</li>
+                        <li><span>Engineering Program Intern</span><br><span2>The NEED Project | May 2024 - August 2024</span2><br>Designed and directed multiple engineering conferences for over 500 participants, spearheaded development of computer and electrical engineering curriculum for collegestudents, and collaborated with companies including the Exelon Foundation and CITGO on program initiatives.</li>
+                        <li><span>Software Engineer Undergraduate Researcher</span><br><span2>University of Georgia | Sep 2023 - May 2024</span2><br>Worked to design, develop, implement, and upkeep a live interactive testing program mimicking a scratch-off card utilizing Python, Flask, and AWS services. Implemented into UGA classrooms.</li>
+
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>University of Georgia</span><br><span>B.S. Computer Science & Computer Systems Engineering | GPA: 4.0/4.0</span><br>Morehead Honors College, Woodruff Scholar, Previous Dual Enrollment Student <br> Extracurriculars: STEMZone (President of Logistics and Outreach), UGAHacks (Logistics Organizer), UGA Club Powerlifting (University Athlete), UGA Fintech Society</li>
+                        <li><span>Cedar Shoals High School</span><br><span>GPA: 4.3/4.0 | SAT: 1490</span><br>Activities and societies: Cedar Shoals Energy Education Team Founder and Leader, BETA Club President, Cedar Shoals Blueprints Copy Editor and Design Director, Outdoors Club Project Leader, National Honors Society Secretary</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="skills">
+                    <ul>    
+                        <li><span>Programming Languages</span><br>Experience in Python, Java, Javascript, React, and Kotlin</li>
+                        <li><span>Other Skills</span><br>Proficient in HTML, CSS, Flask, MongoDB, AWS, Adobe Suite, and Git</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div id="projects">
+        <h1 class="project-title">Projects</h1>
+        <div id="row3">
+            <div class="project-box">
+                <h3>Interactive Scratch-off Program</h3>
+                <p>Designed and implemented a Python/Flask-based interactive testing program mimicking a scratch-off card, deployed in UGA classrooms.</p>
+            </div>
+            <div class="project-box">
+                <h3>Walley The Budget Assistant</h3>
+                <p>Created an advanced budgeting application using React.JS and various visualization APIs to cater towards college students managing student loans, providing data insight.</p>
+            </div>
+            <div class="project-box">
+                <h3>IdentifAI Mobile Application</h3>
+                <p>Developed a android-studio based application using Kotlin and AWS Cloudbase that inputs photos, processes them using AWS Rekognition, and matches faces to various profiles to assist suffering Alzheimer's patients.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-space"></div>
+
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname) {
+            for (var tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (var tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-content");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-content");
+        }
+    </script>
+
+</body>
+</html>
