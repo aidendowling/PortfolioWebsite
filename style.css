@@ -1,37 +1,36 @@
 /* Global reset */
-* {
+* { 
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    box-sizing: border-box; /* Handle padding and border inside elements */
+    box-sizing: border-box; /* Added to handle padding and border inside elements */
 }
 
 @viewport {
-    width: device-width;
-    zoom: 1.0;
+    width: device-width ;
+    zoom: 1.0 ;
 }
 
-/* Basic body styling */
-body {
-    background-color: black;
-    color: white;
-}
-
-/* Home Page */
+/* home page */
 #container {
     width: 100%;
-    height: 100vh; /* Full viewport height for the top section */
-    background: #000000 url('assets/background.jpg') center / cover no-repeat; /* Combined background properties */
+    height: 100vh; /* Use full viewport height for the top section */
+    background-color: #000000;
+    background-image: url('assets/background.jpg');
+    background-position: center;
     padding-left: 7%;
+    background-size: cover; /* Ensure the entire image is visible */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    box-sizing: border-box;
     display: flex;
-    align-items: flex-start; /* Align items to the left */
-    justify-content: flex-start; /* Align items to the left */
+    align-items: left; /* Center content vertically if needed */
+    justify-content: left; /* Center content horizontally if needed */
 }
 
-/* Navbar */
+
 .navbar {
     color: black;
-    height: 60px; /* Fixed height */
+    height: 60px; /* Changed to a fixed height */
     display: flex;
     align-items: center;
     padding-right: 20px;
@@ -40,7 +39,7 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.8); /* Slightly opaque for readability */
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly more opaque for better readability */
 }
 
 .menu-icon {
@@ -49,6 +48,183 @@ body {
     margin-left: auto; /* Center the menu icon on mobile devices */
 }
 
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Allow rows to wrap on smaller screens */
+    height: auto; /* Removed fixed height for better flexibility */
+    align-items: center;
+}
+
+.col {
+    flex-basis: 50%;
+    color: black;
+}
+
+.col h1 {
+    color: black;
+    font-size: calc(4.5vw); /* Scalable font size */
+}
+
+.col p {
+    color: #000000;
+    font-size: calc(2vw);  
+    font-weight: bold;
+}
+
+/* about section */
+#about {
+    width: 100%;
+    height: auto; /* Adjusted height for responsiveness */
+    padding: 80px 0;
+    color: #ffffff;
+    background-color: rgb(0, 0, 0);
+    background-position: center;
+    background-size: cover;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#row2 {
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap; /* Added for smaller screens */
+}
+
+.aboutmecol1 img {
+    margin-top: 35px;
+    width: 100%; /* Made image responsive */
+    max-width: 500px; /* Maintains the image size limit */
+    border: 10px;
+    border-radius: 10px;
+}
+
+.aboutmecol2 {
+    flex-basis: 60%;
+    padding-left: 5%;
+}
+
+.aboutmecol2 h1 {
+    font-size: calc(4vw); /* Scalable title size */
+}
+
+.aboutmecol2 p {
+    font-size: 1.2rem; /* Use a relative unit for better scaling */
+    color: rgb(168, 168, 168);
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap; /* Tabs wrap on smaller screens */
+    margin: 30px 0 40px;
+}
+
+.tab-links {
+    margin-right: 60px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    position: relative;
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: rgb(168, 168, 168);
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: .5s;
+}
+
+.tab-links.active-link::after {
+    width: 100%;
+}
+
+.tab-contents ul li {
+    list-style: none;
+    margin: 20px 0;
+    color: rgb(168, 168, 168);
+}
+
+.tab-contents ul li span {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+.tab-contents ul li span2 {
+    color: white;
+    font-size: 18px;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-content {
+    display: block;
+}
+
+/* Projects section */
+#projects {
+    width: 100%;
+    padding: 80px 0;
+    color: #ffffff;
+    background-color: black;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.project-title {
+    font-size: calc(4vw); /* Scalable title for projects section */
+    color: white;
+    margin-bottom: 40px;
+}
+
+/* Row for project boxes */
+#row3 {
+    display: flex;
+    flex-wrap: wrap;  /* Allow items to wrap if they don't fit in one row */
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+/* Project boxes */
+.project-box {
+    background-color: #1a1a1a;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    flex-basis: 30%;  /* Adjust width of each box, so 3 fit in a row */
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-box:hover {
+    transform: scale(1.05);
+}
+
+.project-box h3 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.project-box p {
+    font-size: 18px;
+    color: rgb(168, 168, 168);
+}
+
+/* Navbar */
 .navbar ul {
     list-style-type: none;
     margin: 0;
@@ -74,132 +250,6 @@ body {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-/* About Section */
-#about {
-    width: 100%;
-    padding: 80px 5%; /* Combined left and right padding */
-    background-color: rgb(0, 0, 0);
-    color: #ffffff;
-}
-
-#row2 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-}
-
-.aboutmecol1 img {
-    margin-top: 35px;
-    width: 100%; /* Responsive image */
-    max-width: 500px; /* Image size limit */
-    border: 10px;
-    border-radius: 10px;
-}
-
-.aboutmecol2 {
-    flex-basis: 60%;
-    padding-left: 5%;
-    text-align: left;
-}
-
-.aboutmecol2 h1 {
-    font-size: calc(4vw); /* Scalable title size */
-}
-
-.aboutmecol2 p {
-    font-size: 1.2rem; /* Font-size for larger screens */
-    color: rgb(168, 168, 168);
-}
-
-/* Tabs */
-.tabs {
-    display: flex;
-    flex-wrap: wrap; /* Tabs wrap on smaller screens */
-    margin: 30px 0 40px;
-}
-
-.tab-links {
-    margin-right: 60px;
-    font-size: 22px;
-    font-weight: bold;
-    cursor: pointer;
-    color: white;
-    position: relative;
-}
-
-.tab-links::after {
-    content: '';
-    width: 0;
-    height: 3px;
-    background: rgb(168, 168, 168);
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    transition: 0.5s;
-}
-
-.tab-links.active-link::after {
-    width: 100%;
-}
-
-.tab-contents {
-    display: none;
-}
-
-.tab-contents.active-content {
-    display: block;
-}
-
-/* Projects Section */
-#projects {
-    width: 100%;
-    padding: 80px 5%; /* Combined left and right padding */
-    color: #ffffff;
-    background-color: black;
-    text-align: center;
-}
-
-.project-title {
-    font-size: 60px;
-    color: white;
-    margin-bottom: 40px;
-}
-
-/* Row for Project Boxes */
-#row3 {
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap */
-    justify-content: space-between;
-    margin-top: 40px;
-}
-
-/* Project Boxes */
-.project-box {
-    background-color: #1a1a1a;
-    border: 2px solid #333;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px;
-    flex-basis: 30%; /* 3 fit in a row on larger screens */
-    transition: transform 0.3s ease-in-out;
-}
-
-.project-box:hover {
-    transform: scale(1.05);
-}
-
-.project-box h3 {
-    font-size: 24px;
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-.project-box p {
-    font-size: 18px;
-    color: rgb(168, 168, 168);
-}
-
 /* Footer */
 .bottom-space {
     height: 190px;
@@ -222,7 +272,7 @@ body {
     color: #565656;
 }
 
-/* Responsive Adjustments */
+/* Responsive Font and Padding Adjustments for Smaller Screens */
 @media (max-width: 768px) {
     .col h1 {
         font-size: calc(6vw); /* Larger scaling for smaller screens */
@@ -232,34 +282,120 @@ body {
         font-size: calc(3vw); /* Adjusted for smaller screens */
     }
 
-    #row2,
-    #row3 {
-        flex-direction: column; /* Stack columns in mobile */
+    .aboutmecol2 h1 {
+        font-size: 40px;
     }
 
+    .project-title {
+        font-size: 40px; /* Adjust for medium screens */
+    }
+
+    .aboutmecol2 p {
+        font-size: 1rem; /* Reduce font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .col h1 {
+        font-size: calc(8vw); /* Larger scaling for smaller screens */
+    }
+    
+    .col p {
+        font-size: calc(4vw); /* Adjusted for mobile screens */
+    }
+
+    .aboutmecol2 h1 {
+        font-size: 30px;
+    }
+
+    .project-title {
+        font-size: 30px; /* Adjust for small screens */
+    }
+
+    .aboutmecol2 p {
+        font-size: 0.9rem; /* Further reduce font size */
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Basic body styling */
+body {
+    background-color: black; 
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* About Section */
+#about {
+    width: 100%;
+    height: auto; /* Adjust for content height */
+    padding: 80px 0;
+    color: #ffffff;
+    background-color: rgb(0, 0, 0);
+    background-position: center;
+    background-size: cover;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+}
+
+#row2 {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.aboutmecol1 img {
+    margin-top: 35px;
+    width: 100%; /* Ensure image is responsive */
+    max-width: 500px;
+    border: 10px;
+    border-radius: 10px;
+}
+
+.aboutmecol2 {
+    flex-basis: 60%;
+    padding-left: 5%;
+    text-align: left;
+}
+
+.aboutmecol2 h1 {
+    font-size: calc(4vw); /* Scalable font size */
+}
+
+.aboutmecol2 p {
+    font-size: 1.2rem; /* Font-size for larger screens */
+    color: rgb(168, 168, 168);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 1400px) {
+    #row2 {
+        flex-direction: column; /* Stack the columns vertically */
+        align-items: center; /* Center align items in the flex container */
+    }
+    
     .aboutmecol1,
-    .aboutmecol2,
-    .project-box {
+    .aboutmecol2 {
         flex-basis: 100%; /* Full width on mobile */
         text-align: center; /* Center text on mobile */
-        padding-left: 0; /* Remove extra padding */
+        padding-left: 0; /* Remove extra padding on mobile */
     }
 
     .aboutmecol1 img {
         max-width: 300px; /* Restrict image size for smaller devices */
     }
 
-    .aboutmecol2 h1,
-    .project-title {
-        font-size: 40px; /* Adjust for mobile */
+    .aboutmecol2 h1 {
+        font-size: 30px; /* Adjust title size for mobile */
     }
 
     .aboutmecol2 p {
         font-size: 1rem; /* Smaller font size for mobile */
-    }
-
-    .project-box {
-        margin: 20px 0; /* Add vertical spacing between project boxes */
     }
 }
 
@@ -273,6 +409,67 @@ body {
     }
 }
 
-html {
-    scroll-behavior: smooth;
+/* Projects section */
+#projects {
+    width: 100%;
+    padding: 80px 0;
+    color: #ffffff;
+    background-color: black;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.project-title {
+    font-size: 60px;
+    color: white;
+    margin-bottom: 40px;
+}
+
+/* Row for project boxes */
+#row3 {
+    display: flex;
+    flex-wrap: wrap;  /* Allow items to wrap */
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+/* Project boxes */
+.project-box {
+    background-color: #1a1a1a;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    flex-basis: 30%;  /* Adjust width of each box, so 3 fit in a row on larger screens */
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-box:hover {
+    transform: scale(1.05);
+}
+
+.project-box h3 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.project-box p {
+    font-size: 18px;
+    color: rgb(168, 168, 168);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    #row3 {
+        flex-direction: column; /* Stack the project boxes in one column */
+    }
+
+    .project-box {
+        flex-basis: 100%; /* Make each project box take up the full width */
+        margin: 20px 0; /* Add vertical spacing between each box */
+    }
 }
